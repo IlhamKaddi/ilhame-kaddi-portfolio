@@ -271,9 +271,9 @@ const Hero: React.FC = () => {
           {/* Right Content - Profile Image */}
           <div className="relative flex justify-center lg:justify-end items-center order-1 lg:order-2">
             <img
-              src="/profile (2).png"
+              src="/hero me.png"
               alt="Profile"
-              className="w-full max-w-[350px] md:max-w-[400px] h-auto rounded-2xl object-cover -mt-16 md:-mt-32"
+              className="w-full max-w-[350px] md:max-w-[800px] h-auto rounded-2xl object-cover -mt-16 md:-mt-32"
             />
           </div>
         </div>
