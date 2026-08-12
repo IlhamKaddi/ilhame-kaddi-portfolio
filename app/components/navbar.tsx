@@ -19,7 +19,7 @@ const links = ["Home", "About", "Skills", "Projects", "Contact"];
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="max-lg:hidden lg:flex items-center gap-6">
           <nav
             className="
               flex items-center gap-1
