@@ -49,8 +49,8 @@ const links = ["Home", "About", "Skills", "Projects", "Contact"];
           </nav>
 
           <a
-            href="/ilhame_kaddi__cv.pdf"
-            download="ilhame-kaddi-cv.pdf"
+            href="/ilham-kadi-cv.pdf"
+            download="ilham-kadi-cv.pdf"
             className="
               flex items-center gap-2
               rounded-full px-4 py-4
@@ -103,8 +103,8 @@ const links = ["Home", "About", "Skills", "Projects", "Contact"];
             ))}
 
             <a
-            href="/ilhame_kaddi__cv.pdf"
-            download="Ilhame-Kaddi-CV.pdf"
+            href="/ilham-kadi-cv.pdf"
+            download="ilham-kadi-cv.pdff"
             className="
               mt-2 flex items-center justify-center gap-2
               rounded-full px-4 py-3
