@@ -19,28 +19,41 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+     {
+        id: 8,
+        title: "Beauty Salon Website",
+        description:
+            "Elegant and responsive beauty salon website showcasing services, photo gallery, and contact information with a refined design.",
+        image: "/salon.PNG",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        category: "Business",
+        live: "https://salon-de-beauty-q3kd.vercel.app/",
+    },
     {
         id: 1,
-        title: "Gym Website",
-        description: "Modern gym website with responsive design and smooth UI.",
-        image: "/projects/gym-p.PNG",
-        tech: ["HTML", "CSS", "JavaScript"],
-        category: "Web App",
-        live: "https://gymy.devaito.com/",
+        title: "Farah Fitness Website",
+        description:
+            "Modern and responsive fitness website showcasing gym services, facilities, and membership information with an engaging user experience.",
+        image: "/salle.PNG",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        category: "Business",
+        live: "https://gym-website-blush-kappa.vercel.app/",
     },
     {
         id: 2,
         title: "Aluminium & Glass Website",
-        description: "Business website for aluminium and glass services.",
+        description:
+            "Professional business website showcasing aluminium and glass services with a modern and responsive design.",
         image: "/projects/alum-p.PNG",
-        tech: ["Next.js", "Typescript","Tailwind CSS", "Framer Motion"],
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
         category: "Business",
         live: "https://web-site-alum.vercel.app/",
     },
     {
         id: 3,
         title: "Fashion E-commerce",
-        description: "Online fashion store with modern product layout.",
+        description:
+            "Online fashion store featuring a modern product layout and a responsive shopping experience.",
         image: "/projects/fashion-p.PNG",
         tech: ["HTML", "CSS", "JavaScript"],
         category: "E-commerce",
@@ -49,7 +62,8 @@ const PROJECTS: Project[] = [
     {
         id: 4,
         title: "House Real Estate Website",
-        description: "Property showcase website for houses and real estate.",
+        description:
+            "Property showcase website designed to present houses and real estate listings with a clean layout.",
         image: "/projects/house-p.PNG",
         tech: ["HTML", "CSS", "JavaScript"],
         category: "Web App",
@@ -58,17 +72,18 @@ const PROJECTS: Project[] = [
     {
         id: 5,
         title: "Marketing Brand Website",
-        description: "Professional marketing agency website.",
+        description:
+            "Professional marketing agency website with a modern design and responsive interface.",
         image: "/projects/agency-p.PNG",
         tech: ["HTML", "CSS", "JavaScript"],
         category: "Web App",
         live: "https://agency.devaito.com/",
     },
-
     {
         id: 6,
         title: "Healthy Products E-commerce",
-        description: "E-commerce platform for healthy and organic products.",
+        description:
+            "E-commerce website dedicated to healthy and organic products, featuring a clean and user-friendly interface.",
         image: "/projects/vita-p.PNG",
         tech: ["HTML", "CSS", "JavaScript"],
         category: "E-commerce",
@@ -77,13 +92,14 @@ const PROJECTS: Project[] = [
     {
         id: 7,
         title: "Men & Women Fashion Store",
-        description: "Fashion e-commerce website for men and women clothing.",
+        description:
+            "Fashion e-commerce website showcasing clothing collections for men and women with a modern shopping experience.",
         image: "/projects/styly-p.PNG",
         tech: ["HTML", "CSS", "JavaScript"],
         category: "E-commerce",
         live: "https://styliq.devaito.com/",
     },
-
+   
 ];
 
 const CATEGORIES = ["All", "Web App", "E-commerce", "Business"];
@@ -102,17 +118,18 @@ export default function Projects() {
             : PROJECTS.filter((project) => project.category === filter);
 
     return (
-        <section className="min-h-screen bg-black text-white py-20 px-6"   
-        style={{
-        backgroundImage: `
-          linear-gradient(rgba(244,114,182,0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(244,114,182,0.05) 1px, transparent 1px)
-        `,
-        backgroundSize: "50px 50px",
-      }}>
+        <section
+            className="min-h-screen bg-black text-white py-20 px-6"
+            style={{
+                backgroundImage: `
+                    linear-gradient(rgba(244,114,182,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(244,114,182,0.05) 1px, transparent 1px)
+                `,
+                backgroundSize: "50px 50px",
+            }}
+        >
             <div className="max-w-6xl mx-auto">
-
-                {/* ===== HEADER ===== */}
+                {/* HEADER */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -122,6 +139,7 @@ export default function Projects() {
                 >
                     <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-2 mb-6">
                         <Sparkles className="w-5 h-5 text-purple-400" />
+
                         <span className="text-purple-300 font-medium">
                             Featured Work
                         </span>
@@ -132,30 +150,34 @@ export default function Projects() {
                     </h2>
 
                     <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                        A selection of websites and e-commerce projects I’ve built using modern web technologies.
+                        A selection of websites and e-commerce projects I’ve
+                        built using modern web technologies.
                     </p>
                 </motion.div>
 
-                {/* ===== FILTERS ===== */}
+                {/* FILTERS */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {CATEGORIES.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setFilter(cat)}
-                            className={`px-6 py-2 rounded-full text-sm font-medium transition-all
-                ${filter === cat
+                            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                                filter === cat
                                     ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
                                     : "bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700"
-                                }`}
+                            }`}
                         >
                             {cat}
                         </button>
                     ))}
                 </div>
 
-                {/* ===== PROJECT GRID ===== */}
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <AnimatePresence>
+                {/* PROJECT GRID */}
+                <motion.div
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project) => (
                             <motion.div
                                 key={project.id}
@@ -166,7 +188,7 @@ export default function Projects() {
                                 transition={{ duration: 0.4 }}
                                 onHoverStart={() => setHoveredId(project.id)}
                                 onHoverEnd={() => setHoveredId(null)}
-                                className="group relative bg-slate-800/40 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50"
+                                className="group relative bg-slate-800/40 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition-colors"
                             >
                                 {/* IMAGE */}
                                 <div className="relative h-48 overflow-hidden">
@@ -174,19 +196,32 @@ export default function Projects() {
                                         src={project.image}
                                         alt={project.title}
                                         className="w-full h-full object-cover"
-                                        animate={{ scale: hoveredId === project.id ? 1.1 : 1 }}
+                                        animate={{
+                                            scale:
+                                                hoveredId === project.id
+                                                    ? 1.1
+                                                    : 1,
+                                        }}
                                         transition={{ duration: 0.4 }}
                                     />
 
                                     {/* HOVER OVERLAY */}
                                     <motion.div
-                                        animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
+                                        initial={{ opacity: 0 }}
+                                        animate={{
+                                            opacity:
+                                                hoveredId === project.id
+                                                    ? 1
+                                                    : 0,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                         className="absolute inset-0 bg-black/70 flex items-center justify-center"
                                     >
                                         <a
                                             href={project.live}
                                             target="_blank"
                                             rel="noopener noreferrer"
+                                            aria-label={`View ${project.title} website`}
                                             className="p-4 bg-purple-500 rounded-full hover:bg-purple-600 transition"
                                         >
                                             <ExternalLink className="w-6 h-6 text-white" />
@@ -196,13 +231,15 @@ export default function Projects() {
 
                                 {/* CONTENT */}
                                 <div className="p-6">
-                                    <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400">
+                                    <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
                                         {project.title}
                                     </h3>
+
                                     <p className="text-sm text-slate-400 mb-4 line-clamp-2">
                                         {project.description}
                                     </p>
 
+                                    {/* TECHNOLOGIES */}
                                     <div className="flex flex-wrap gap-2">
                                         {project.tech.map((tech) => (
                                             <span
@@ -218,8 +255,6 @@ export default function Projects() {
                         ))}
                     </AnimatePresence>
                 </motion.div>
-
-
             </div>
         </section>
     );
